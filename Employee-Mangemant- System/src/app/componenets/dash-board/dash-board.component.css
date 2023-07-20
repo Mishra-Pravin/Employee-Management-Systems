@@ -1,0 +1,74 @@
+.dashboard {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .action-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .add-button button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .search-bar input[type="text"] {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  tr:hover {
+    background-color: #efe5e5;
+  }
+  
+  .action-buttons {
+    display: flex;
+  }
+  
+  .edit-button,
+  .delete-button {
+    background-color: #3d91c2;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .edit-button:hover,
+  .delete-button:hover {
+    background-color: #312b26;
+  }

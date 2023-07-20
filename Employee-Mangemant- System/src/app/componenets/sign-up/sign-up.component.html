@@ -1,0 +1,31 @@
+
+<form [formGroup]="sampleForm" (ngSubmit)="handleSubmit()" class="form-box">
+
+    <div class="form-group">
+        <label >Name</label>
+        <input placeholder="Provide your name" type="text" formControlName="name"/>
+        <span *ngIf="sampleForm.get('name')?.invalid && sampleForm.get('name')?.touched" >Name is Invalid (minimum length is 2 characters)</span>
+    </div>
+
+    <div class="form-group">
+        <label >Email Address</label>
+        <input type="email" placeholder="Provide your Email Address" formControlName="emailAddress"/>
+        <span *ngIf="sampleForm.get('emailAddress')?.invalid && sampleForm.get('emailAddress')?.touched" >Email Addrss is Invalid</span>
+    </div>
+
+    <div class="form-group">
+        <label >Age</label>
+        <input type="number" placeholder="Enter your age" formControlName="age"/>
+        <span *ngIf="sampleForm.get('age')?.invalid  && sampleForm.get('age')?.touched">Age is invalid (must consist only of digits)</span>
+    </div>
+
+    <div class="form-group">
+        <label >Password</label>
+        <input type="password" placeholder="Enter your Password" autocomplete="off"  formControlName="pass"/>
+        <span *ngIf="sampleForm.get('pass')?.invalid  && sampleForm.get('pass')?.touched">Please enter a valid password (must consist only of letters and digits)</span>
+    </div>
+    <div class="form-group">
+        <button type="submit" [disabled]="sampleForm.invalid">SignUp</button>
+    </div>
+
+</form>
