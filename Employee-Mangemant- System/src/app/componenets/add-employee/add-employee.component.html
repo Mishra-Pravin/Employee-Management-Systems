@@ -1,0 +1,51 @@
+<h2 class="section-title">Add Employee</h2>
+
+<form (ngSubmit)="saveEmployee()" [formGroup]="employeeForm" class="employee-form">
+  <!-- Form fields for employee details -->
+  <div class="form-group">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" placeholder="Employee name" formControlName="firstName"/>
+    <span class="error-message" *ngIf="employeeForm.get('firstName')?.invalid && employeeForm.get('firstName')?.touched">
+      Name is invalid (minimum length is 2 characters).
+    </span>
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" formControlName="lastName" placeholder="Employee last name">
+    <span class="error-message" *ngIf="employeeForm.get('lastName')?.invalid && employeeForm.get('lastName')?.touched">
+      Last name is invalid.
+    </span>
+  </div>
+
+  <div class="form-group">
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="number" id="phoneNumber" formControlName="phoneNumber" placeholder="Employee phone number">
+    <span class="error-message" *ngIf="employeeForm.get('phoneNumber')?.invalid && employeeForm.get('phoneNumber')?.touched">
+      Phone number is invalid.
+    </span>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlName="emailId" placeholder="Employee email">
+    <span class="error-message" *ngIf="employeeForm.get('emailId')?.invalid && employeeForm.get('emailId')?.touched">
+      Email is invalid.
+    </span>
+  </div>
+
+  <div class="form-group">
+    <label for="department">Department:</label>
+    <div class="department-radio">
+      <input type="radio" id="departmentMechanical" formControlName="department" value="Mechanical" name="department">
+      <label for="departmentMechanical">Mechanical 🔨</label>
+      <input type="radio" id="departmentCivil" formControlName="department" value="Civil" name="department">
+      <label for="departmentCivil">Civil 👷</label>
+    </div>
+    <span class="error-message" *ngIf="employeeForm.get('department')?.invalid && employeeForm.get('department')?.touched">
+      Department is required.
+    </span>
+  </div>
+
+  <button type="submit" [disabled]="!employeeForm.valid" class="submit-button">Submit</button>
+</form>

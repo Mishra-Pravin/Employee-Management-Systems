@@ -1,0 +1,46 @@
+<div class="dashboard">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKMCLaPp4KRMT8a_v8KyBxYI0MAKw53b1NQg&usqp=CAU" alt="">
+</div>
+
+<h2 class="section-title">Stark Industry Employees 👨‍💼</h2>
+
+<div class="action-bar">
+  <div class="add-button">
+    <button (click)="addEmployee()" routerLink="/add-employee">+</button>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search by name" (input)="searchEmplo()">
+  </div>
+</div>
+
+
+<table class="employee-table">
+  <thead>
+    <tr>
+      <th>EmpId</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Phone Number</th>
+      <th>Email</th>
+      <th>Department</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.firstName }}</td>
+      <td>{{ employee.lastName }}</td>
+      <td>{{ employee.phoneNumber }}</td>
+      <td>{{ employee.emailId }}</td>
+      <td>{{ employee.department }}</td>
+      <td>
+        <div class="action-buttons">
+          <button class="edit-button" (click)="editEmployee(employee)">🖊️</button>
+          <button class="delete-button" (click)="deleteEmployee(employee)">🗑️</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
